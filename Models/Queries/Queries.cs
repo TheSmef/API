@@ -4,5 +4,5 @@ using API.Models.Response;
 
 namespace API.Models.Queries
 {
-    public sealed record GetEmployeeQuery(PostEnum Post) : IQuery<ICollection<EmployeeWithStatsResponse>>;
+    public sealed record GetEmployeesQuery(PostEnum? Post) : IQuery<ICollection<EmployeeWithStatsResponse>>;
 }

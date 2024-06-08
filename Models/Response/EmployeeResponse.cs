@@ -6,7 +6,7 @@ namespace API.Models.Response
     public record EmployeeResponse(Guid Id,
             string LastName,
             string FirstName,
-            string MiddleName,
+            string? MiddleName,
             PostEnum Post)
     {
         public string PostString => Post.GetStringValue();

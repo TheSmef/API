@@ -4,6 +4,6 @@ namespace API.Models.Requests.Shift
 {
     public record EndShiftRequest(
         Guid Id,
-        DateTime DateTime)
+        TimeOnly Time)
     { }
 }

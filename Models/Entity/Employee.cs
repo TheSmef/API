@@ -7,8 +7,9 @@ namespace API.Models.Entity
     {
         public string LastName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
-        public string? MiddleName { get; set; }
+        public string? MiddleName { get; set; } = null;
         public PostEnum Post { get; set; }
+        public ICollection<Shift> Shifts { get; set; } = [];
     }
 
     public enum PostEnum

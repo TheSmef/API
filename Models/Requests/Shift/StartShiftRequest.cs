@@ -2,6 +2,7 @@
 {
     public record StartShiftRequest(
         Guid Id,
-        DateTime DateTime)
+        DateOnly Date,
+        TimeOnly Time)
     { }
 }

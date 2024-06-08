@@ -1,4 +1,5 @@
-﻿using API.Models.Requests.Shift;
+﻿using API.Models.Entity;
+using API.Models.Requests.Shift;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

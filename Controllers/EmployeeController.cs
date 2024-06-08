@@ -29,7 +29,7 @@ namespace API.Controllers
             return Ok();
         }
         [HttpGet]
-        public async Task<ActionResult<ICollection<EmployeeWithStatsResponse>>> GetEmployees(GetEmployeeRequest request)
+        public async Task<ActionResult<ICollection<EmployeeWithStatsResponse>>> GetEmployees([FromQuery]GetEmployeesRequest request)
         {
             return Ok();
         }

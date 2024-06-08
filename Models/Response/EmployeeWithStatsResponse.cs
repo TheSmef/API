@@ -6,11 +6,12 @@ namespace API.Models.Response
     public record EmployeeWithStatsResponse(Guid Id,
             string LastName,
             string FirstName,
-            string MiddleName,
+            string? MiddleName,
             PostEnum Post,
             int ViolationsFactor,
-            int ComplianceFactor)
+            int AttendanceFactor)
     {
         public string PostString => Post.GetStringValue();
+        public int ComplianceFactor => AttendanceFactor - ViolationsFactor;
     }
 }

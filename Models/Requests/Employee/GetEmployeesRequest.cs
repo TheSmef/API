@@ -2,7 +2,7 @@
 
 namespace API.Models.Requests.Employee
 {
-    public record GetEmployeeRequest(
-        PostEnum PostEnum)
+    public record GetEmployeesRequest(
+        PostEnum? PostEnum)
     { }
 }

@@ -1,5 +1,7 @@
+using API.Data.Context;
 using API.Utility.Errors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,10 @@ builder.Services.Configure<ApiBehaviorOptions>(op =>
 {
     op.InvalidModelStateResponseFactory = ErrorResponceHandler.GenerateErrorResponce;
 });
+
+builder.Services.AddDbContextPool<DataContext>(options =>
+    options.UseSqlite()
+);
 
 var app = builder.Build();
 

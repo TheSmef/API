@@ -4,9 +4,11 @@ namespace API.Models.Entity
 {
     public class Shift : BaseEntity
     {
-        public DateTime Start { get; set; }
-        public DateTime? End { get; set; }
-        public int WorkTime { get; set; } = 0;
-        public Employee Employee { get; set; } = new Employee();
+        public TimeOnly Start { get; set; }
+        public TimeOnly? End { get; set; } = null;
+        public Guid EmployeeId { get; set; } = new Guid();
+        public virtual Employee Employee { get; set; } = default!;
+        public DateOnly Date { get; set; }
+        public TimeSpan WorkTime => End == null ? TimeSpan.Zero : (End - Start).Value;
     }
 }
