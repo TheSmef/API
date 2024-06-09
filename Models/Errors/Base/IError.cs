@@ -1,10 +1,16 @@
 ﻿using API.Models.Errors.Response;
-using FluentResults;
 
 namespace API.Models.Errors.Base
 {
-    public interface IErrorHandler : IError
+    /// <summary>
+    /// Интерфейс для обрабтки ошибок
+    /// </summary>
+    public interface IError
     {
+        /// <summary>
+        /// Метод для перевода ошибки в универсальную модель
+        /// </summary>
+        /// <returns>Универсальная информативная модель ошибки</returns>
         public ErrorResponse MapToResponse();
     }
 }

@@ -6,8 +6,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Validators.Shift
 {
+    /// <summary>
+    /// Класс для валидации команды <see cref="EndShiftCommand"/>
+    /// </summary>
     public class EndShiftCommandValidator : AbstractValidator<EndShiftCommand>
     {
+        /// <summary>
+        /// Конструктор валидатора с его правилами
+        /// </summary>
+        /// <param name="context">Контекст базы данных</param>
         public EndShiftCommandValidator(DataContext context)
         {
             #region Internal Validation
@@ -32,7 +39,7 @@ namespace API.Validators.Shift
                         }
                         else
                         {
-                            if (shift.Start >= prop.Time)
+                            if (shift.Start > prop.Time)
                                 vcontext.AddFailure(ContextConstants.StartGreaterThanEnd);
                         }
                     } 

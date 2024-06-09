@@ -5,8 +5,15 @@ using FluentValidation;
 
 namespace API.Validators.Employee
 {
+    /// <summary>
+    /// Класс для валидации команды <see cref="DeleteEmployeeCommand"/>
+    /// </summary>
     public class DeleteEmployeeCommandValidator : AbstractValidator<DeleteEmployeeCommand>
     {
+        /// <summary>
+        /// Конструктор валидатора с его правилами
+        /// </summary>
+        /// <param name="repository">Репозиторий сотрудников <see cref="Models.Entity.Employee"/></param>
         public DeleteEmployeeCommandValidator(IEmployeeRepository repository)
         {
             #region External Validation

@@ -7,8 +7,15 @@ using System.Text.RegularExpressions;
 
 namespace API.Data.Context
 {
+    /// <summary>
+    /// EF Core контекст для взаимодействия с базой данных
+    /// </summary>
     public class DataContext : DbContext
     {
+        /// <summary>
+        /// <inheritdoc cref="DbContext()"/>
+        /// </summary>
+        /// <param name="options"><inheritdoc cref="DbContextOptions"/></param>
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
             Database.Migrate();
@@ -18,6 +25,7 @@ namespace API.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             #region Employee
+            modelBuilder.Entity<Employee>().HasKey(x => x.Id);
             modelBuilder.Entity<Employee>().HasIndex(x => x.Post);
             modelBuilder.Entity<Employee>().Property(x => x.FirstName)
                 .HasMaxLength(120).IsRequired(true);
@@ -27,7 +35,6 @@ namespace API.Data.Context
                 .HasMaxLength(120).IsRequired(false);
             modelBuilder.Entity<Employee>().Property(x => x.Post)
                 .IsRequired(true);
-            modelBuilder.Entity<Employee>().HasKey(x => x.Id);
             #endregion
             #region Shift
             modelBuilder.Entity<Shift>().HasKey(x => x.Id);
@@ -77,8 +84,13 @@ namespace API.Data.Context
             modelBuilder.Entity<Shift>().HasData(shifts);
             #endregion
         }
-
+        /// <summary>
+        /// Сет для сотрудников
+        /// </summary>
         public DbSet<Employee> Employees { get; set; }
+        /// <summary>
+        /// Сет для смен
+        /// </summary>
         public DbSet<Shift> Shifts { get; set; }
     }
 }

@@ -4,8 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Utility.Errors
 {
+    /// <summary>
+    /// Статический класс для обработки ошибок Middleware Asp.Net
+    /// </summary>
     public static class ErrorResponceHandler
     {
+        /// <summary>
+        /// Метод перевода ошибок Middleware в обшую модель ошибки
+        /// </summary>
+        /// <param name="context">Контекст действия</param>
+        /// <returns>BadRequest с общей моделей ошибок</returns>
         public static IActionResult GenerateErrorResponce(ActionContext context)
         {
             var error = new ErrorResponse

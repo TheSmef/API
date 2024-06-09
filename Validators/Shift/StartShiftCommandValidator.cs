@@ -6,8 +6,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Validators.Shift
 {
+    /// <summary>
+    /// Класс для валидации команды <see cref="StartShiftCommand"/>
+    /// </summary>
     public class StartShiftCommandValidator : AbstractValidator<StartShiftCommand>
     {
+        /// <summary>
+        /// Конструктор валидатора с его правилами
+        /// </summary>
+        /// <param name="context">Контекст базы данных</param>
         public StartShiftCommandValidator(DataContext context)
         {
             #region External Validation

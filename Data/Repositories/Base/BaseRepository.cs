@@ -5,11 +5,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Data.Repositories.Base
 {
+    /// <summary>
+    /// <inheritdoc cref="IRepository{TEntity}"/>
+    /// </summary>
+    /// <typeparam name="TEntity">Тип данных для взаимодействия внутри репозитория, тип данных для сета</typeparam>
     public abstract class BaseRepository<TEntity> : IRepository<TEntity>
         where TEntity : BaseEntity
     {
+        /// <summary>
+        /// Экземпляр контекста данных
+        /// </summary>
         protected readonly DataContext _context;
-
+        /// <summary>
+        /// Конструктор репозитория <typeparamref name="TEntity"/>
+        /// </summary>
+        /// <param name="context">Экземпляр контекста данных</param>
         public BaseRepository(DataContext context)
         {
             _context = context;

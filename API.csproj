@@ -20,8 +20,8 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.5.1" />
-    <PackageReference Include="FluentResults" Version="3.15.2" />
     <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
     <PackageReference Include="MediatR" Version="12.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
@@ -31,11 +31,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Handlers\Commands\Employee\" />
-    <Folder Include="Services\Handlers\Commands\Shift\" />
   </ItemGroup>
 
 </Project>

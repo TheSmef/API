@@ -3,5 +3,8 @@ using API.Models.Entity;
 
 namespace API.Data.Repositories.Interfaces
 {
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
     public interface IEmployeeRepository : IRepository<Employee> { }
 }

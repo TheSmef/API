@@ -1,5 +1,8 @@
 ﻿namespace API.Utility.Constants
 {
+    /// <summary>
+    /// Класс для констант
+    /// </summary>
     public static class ContextConstants
     {
         #region General
@@ -33,6 +36,25 @@
         #endregion
         #region Time Messages
         public const string StartGreaterThanEnd = "Начало смены не может быть позже конца смены";
+        #endregion
+        #region Enum
+        public const string OutsideOfEnum = "Данной должности не существует";
+        #endregion
+        #region Endpoints
+        public const string StartShiftDescription = "Эндпоинт для установки начала смены сотрудника, принимает в себя идентификатор сотрудника, а также дату и время начала смены.";
+        public const string StartShiftSummary = "Установка начала смены сотрудника.";
+        public const string EndShiftDescription = "Эндпоинт для установки конца смены сотрудника, принимает в себя индентификатор сотрудника и время конца смены.";
+        public const string EndShiftSummary = "Установка конца смены сотрудника.";
+        public const string AddEmployeeDescription = "Эндпоинт для добавление нового сотрудника, принимает ФИО сотрудника и его должность.";
+        public const string AddEmployeeSummary = "Добавление сотрудника.";
+        public const string UpdateEmployeeDescription = "Эндпоинт для изменение данных сотрудника, принимает идентификатор, ФИО и должность сотрудника.";
+        public const string UpdateEmployeeSummary = "Изменение данных сотрудника.";
+        public const string DeleteEmployeeDescription = "Эндпоинт для удаления данных сотрудника, принимает идентификатор сотрудника.";
+        public const string DeleteEmployeeSummary = "Удаление данных сотрудника.";
+        public const string GetEmployeesDescription = "Эндпоинт для получения данных сотрудников, принимает должность сотрудника (опционально).";
+        public const string GetEmployeesSummary = "Получение информации о сотрудниках (вместе с статистикой смен).";
+        public const string GetPostsDescription = "Эндпоинт для получение данных должностей";
+        public const string GetPostsSummary = "Получение информации о должностях.";
         #endregion
     }
 }

@@ -5,5 +5,9 @@ using API.Models.Entity;
 
 namespace API.Data.Repositories
 {
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="context"><inheritdoc cref="BaseRepository{TEntity}._context"/></param>
     public sealed class ShiftRepository(DataContext context) : BaseRepository<Shift>(context), IShiftRepository;
 }
