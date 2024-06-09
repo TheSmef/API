@@ -46,14 +46,14 @@ namespace API.Services.Handlers.Queries.Employees
                 x.MiddleName,
                 x.Post,
                 x.Shifts.Where(sh => sh.Date > DateOnly.FromDateTime(DateTime.Now.AddDays(-30)))
-                     .Count(sh => x.Post == PostEnum.Tester ?
+                     .Count(sh => (x.Post == PostEnum.Tester ?
                      sh.Start > TimeOnly.FromTimeSpan(TimeSpan.FromHours(9))
                      ||
                      sh.End < TimeOnly.FromTimeSpan(TimeSpan.FromHours(21))
                      :
                      sh.Start > TimeOnly.FromTimeSpan(TimeSpan.FromHours(9))
                      ||
-                     sh.End < TimeOnly.FromTimeSpan(TimeSpan.FromHours(18))),
+                     sh.End < TimeOnly.FromTimeSpan(TimeSpan.FromHours(18))) && sh.End != null),
                 x.Shifts.Count(sh => sh.Date > DateOnly.FromDateTime(DateTime.Now.AddDays(-30)) && sh.End != null)
                     ));
 
